@@ -1,0 +1,52 @@
+.hidden {
+  display: none;
+}
+.shown {
+  display: block;
+}
+ul {
+  height: 10%;
+}
+li {
+  width: 40%;
+  height: 20%;
+  flex: 0 0 10%;
+  border: 0.5px solid grey;
+  padding: 0.7em;
+  display: flex;
+}
+.right-align {
+  margin-left:auto;
+  margin-right:20;
+}
+#addButton {
+  position: fixed;
+  right: 57.5%;
+}
+#pageNumDiv {
+  position: absolute;
+  top: 400px;
+  left: 25px;
+  width: 200px;
+  height: 100px;
+}
+.status-Done {
+  border: 2px solid green;
+  color: green;
+  margin-right: 5px;
+}
+.status-InProgress {
+  border: 2px solid rgb(0, 47, 255);
+  color: rgb(0, 47, 255);
+  margin-right: 5px;
+}
+.status-NotStarted {
+  border: 2px solid black;
+  color: black;
+  margin-right: 5px;
+}
+.status-WontDo {
+  border: 2px solid red;
+  color: red;
+  margin-right: 5px;
+}

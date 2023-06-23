@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+<head>
+  <h1>Todo list</h1>
+</head>
+<body class="container">
+
+<main>
+  <button type="button" id="addButton" onclick=addEvent()>Add TODO</button>
+  <br>
+  <ul id="pageListDiv" aria-live="polite">
+    <% row.forEach(function(ar) { %>
+      <li onclick=editEvent(<%- JSON.stringify(ar) %>)> 
+        <label> <%= ar.name %> </label>
+        <div class="right-align">
+        <label id="statusCode" class="status-<%= ar.status %>"> <%= ar.status %> </label> 
+        <button type="button" onclick=deleteCrud(<%= ar.id %>)>X</button>
+        </div>
+      </li>
+    <% }); %>
+</ul>
+<nav>
+  <div id="pageNumDiv">
+  </div>
+</nav>
+
+
+<div id="addDiv" hidden>
+  Task name :
+  <input id="addName" placeholder="enter name.."><br>
+  Description :
+  <textarea id="addDesc" placeholder="enter description.."></textarea><br>
+  Status : 
+  <select id="addStatus">
+    <option value="NotStarted">Not Started</option>
+    <option value="InProgress">In Progress</option>
+    <option value="Done">Done</option>
+    <option value="WontDo">Wont do</option>
+  </select><br>
+  <input id="hiddenId" hidden>
+  <button type="button" onclick=insertCrud()>Add</button>
+  <button type="button" onclick="goBack()">Back</button>
+</div>
+
+
+<div id="editDiv" hidden>
+  Task name :
+  <input id="editName" placeholder="enter name.."><br>
+  Description :
+  <textarea id="editDesc" placeholder="enter description.."></textarea><br>
+  Status : 
+  <select id="editStatus">
+    <option value="NotStarted">Not Started</option>
+    <option value="InProgress">In Progress</option>
+    <option value="Done">Done</option>
+    <option value="WontDo">Wont do</option>
+  </select><br>
+  Last updated : 
+  <label id="editDate"></label>
+  <br>
+  <input id="hiddenId" hidden>
+  <button type="button" onclick=editCrud()>Save</button>
+  <button type="button" onclick="goBack()">Back</button>
+</div>
+  
+</main>
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<script src="../scripts.js"> </script>
+</body>
+</html>
